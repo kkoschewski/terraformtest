@@ -32,4 +32,10 @@ jobs:
         run: terraform apply -auto-approve tfplan
         env: 
           IONOS_TOKEN: ${{ secrets.IONOS_TOKEN }}
+
+      - name: Terraform Destroy
+        ## ask for confirmation before destroying the resources
+        run: terraform destroy -auto-approve
+        env: 
+          IONOS_TOKEN: ${{ secrets.IONOS_TOKEN }}
           
