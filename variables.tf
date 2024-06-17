@@ -22,7 +22,3 @@ variable k8s_version {
   description = "description"
 }
 
-variable ionscloud_token {
-  type        = string
-  description = "description"
-}
