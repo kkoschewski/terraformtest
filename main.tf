@@ -14,3 +14,4 @@ resource "ionoscloud_k8s_cluster" "example" {
   }
 
 }   
+## End of snippet
