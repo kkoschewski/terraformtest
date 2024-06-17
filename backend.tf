@@ -1,12 +1,11 @@
-terraform {
   backend "s3" {
-    endpoints.s3 = "https://s3.eu-central-3.ionoscloud.com/" 
-    bucket   = "terraforminfrastructurebucket"
-    key      = "terraform.tfstate"
-    region   = "eu-central-3"
+    bucket         = "terraforminfrastructurebucket"
+    key            = "./terraform.tfstate"
+    region         = "eu-central-3 (Berlin, Deutschland)"
+    access_key     = var.aws_access_key
+    secret_key     = var.aws_secret_key
+    endpoint       = "https://s3.eu-central-3.ionoscloud.com/"  
     skip_credentials_validation = true
     skip_metadata_api_check     = true
-    skip_requesting_account_id  = true
-    force_path_style            = true
   }
 }
