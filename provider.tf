@@ -7,3 +7,7 @@ terraform {
   }
 }
 
+provider "ionoscloud" {
+  ionscloud_token = var.ionscloud_token
+}
+
