@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    endpoint = "https://s3.eu-central-3.ionoscloud.com/" 
+    endpoints.s3 = "https://s3.eu-central-3.ionoscloud.com/" 
     bucket   = "terraforminfrastructurebucket"
     key      = "terraform.tfstate"
     region   = "eu-central-3"
