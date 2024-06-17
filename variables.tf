@@ -21,3 +21,8 @@ variable k8s_version {
   default     = "1.28.4"
   description = "description"
 }
+
+variable ionscloud_token {
+  type        = string
+  description = "description"
+}
