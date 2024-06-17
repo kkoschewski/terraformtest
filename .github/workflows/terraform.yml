@@ -24,6 +24,8 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
+        env: 
+          IONOS_TOKEN: ${{ secrets.IONOS_TOKEN }}
 
       - name: Save Terraform Plan
         uses: actions/upload-artifact@v2
