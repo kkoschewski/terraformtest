@@ -20,7 +20,7 @@ jobs:
 
     - name: Configure Ionos credentials
       run: |
-        echo "IONOS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID_ACCESS_KEY }}" >> $GITHUB_ENV
+        echo "IONOS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
         echo "IONOS_SECRET_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
 
     - name: Initialize Terraform
