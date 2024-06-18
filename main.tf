@@ -8,6 +8,7 @@ terraform {
     endpoint       = "s3.eu-central-1.ionoscloud.com"  # Beispiel für Ionos Cloud
     skip_credentials_validation = true
     skip_metadata_api_check     = true
+    skip_region_validation      = true
   }
 }
 
