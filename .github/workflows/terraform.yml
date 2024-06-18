@@ -24,9 +24,6 @@ jobs:
       
     - name: Terraform Init
       run: terraform init 
-      env:
-        IONOS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        IONOS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
 
 
