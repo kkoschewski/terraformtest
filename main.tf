@@ -7,8 +7,10 @@ terraform {
     region         = "de"          # Region ist optional für Ionos Cloud
     endpoint       = "s3.eu-central-1.ionoscloud.com"  # Beispiel für Ionos Cloud
     skip_credentials_validation = true
-    skip_metadata_api_check     = true
-    skip_region_validation      = true
+    skip_get_ec2_platforms = true
+    skip_metadata_api_check = true
+    skip_requesting_account_id = true
+    force_path_style = true
   }
 }
 
