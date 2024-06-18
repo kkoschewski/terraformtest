@@ -9,6 +9,7 @@ terraform {
     skip_metadata_api_check = true
     force_path_style = true
     skip_region_validation = true
+    region = "de"
   }
 }
 
