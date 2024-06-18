@@ -31,7 +31,7 @@ jobs:
 
 ## Init tfstate from backend.tf file
       - name: Terraform Init
-        run: terraform init -backend-config=backend.tf
+        run: terraform init -backend-config=terraform.tf
 
 ## Plan the changes
       - name: Terraform Plan
