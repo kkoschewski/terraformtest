@@ -22,9 +22,8 @@ jobs:
       run: |
         echo "IONOS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
         echo "IONOS_SECRET_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+        terraform init
 
-    - name: Initialize Terraform
-      run: terraform init
 
     - name: Apply Terraform
       run: terraform apply -auto-approve
