@@ -1,4 +1,4 @@
-name: Deploy Terraform
+name: Terraform Deployment
 
 on:
   push:
@@ -12,23 +12,28 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-     
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
-        terraform_version: 1.0.11
-      env:
-        IONOS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        IONOS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      
-    - name: Terraform Init
-      run: terraform init 
-      
+        terraform_version: 1.0.0
 
+    - name: Configure AWS credentials
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        echo "[default]" > ~/.aws/credentials
+        echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
+        echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+        echo "[default]" > ~/.aws/config
+        echo "region = your-region" >> ~/.aws/config
+
+    - name: Terraform Init
+      run: terraform init
 
     - name: Terraform Plan
       run: terraform plan
 
-    - name: Apply Terraform
+    - name: Terraform Apply
       run: terraform apply -auto-approve
