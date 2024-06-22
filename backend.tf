@@ -5,8 +5,12 @@ terraform {
     bucket                      = "terraforminfrastructurebucket"
     key                         = "terraform.tfstate"
     encrypt = true
-    dynamodb_table = "mycomponents_tf_lockid"
     skip_region_validation = true
+    
+
+
+
+
 
     
   

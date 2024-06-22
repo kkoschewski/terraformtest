@@ -7,6 +7,17 @@ terraform {
   }
 }
 
+
 provider "aws" {
-  region = "de" # Ersetzen Sie dies durch Ihre gewünschte Region
+  region                      = "de"
+  skip_credentials_validation = true
+  skip_requesting_account_id  = true
+  skip_metadata_api_check     = true
+
+
+  endpoints {
+    s3 = "https://s3.eu-central-3.ionoscloud.com/"
+  
+  }
 }
+
