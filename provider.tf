@@ -7,4 +7,6 @@ terraform {
   }
 }
 
-
+provider "aws" {
+  region = "de" # Ersetzen Sie dies durch Ihre gewünschte Region
+}
