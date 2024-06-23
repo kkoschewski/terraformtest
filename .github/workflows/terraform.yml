@@ -22,7 +22,7 @@ jobs:
   ## Check file in backend folder
 
     - name: Terraform Init
-      run: terraform init 
+      run: terraform init -reconfigure
 
 
  ## terraform plan and ok then apply
@@ -34,7 +34,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       run: terraform plan  -out=tfplan
-      
+
     
 
 
