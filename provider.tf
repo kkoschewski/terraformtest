@@ -21,3 +21,6 @@ provider "aws" {
   }
 }
 
+provider "ionoscloud" {
+  token = var.IONOSCLOUD_TOKEN
+}
